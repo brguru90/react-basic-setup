@@ -67,12 +67,12 @@
     }
   },
   "lint-staged": {
-    "src/*.+(js|jsx)": [
-      "eslint 'src/**/*.{js,jsx}' --fix;exit 0",
+    "src/**/*.+(js|jsx)": [
+      "eslint --fix",
       "npm run format",
       "git add"
     ],
-    "src/*.+(json|css|md)": [
+    "src/**/*.+(json|css|md)": [
       "prettier --write",
       "git add"
     ]
