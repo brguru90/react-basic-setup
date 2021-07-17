@@ -7,7 +7,7 @@ export default class page1 extends Component {
             <div>
                 Page1
                 <br />
-                <Link to="page2">view Page2</Link>
+                {/* <Link to="page2">view Page2</Link> */}
             </div>
         )
     }
