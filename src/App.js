@@ -3,6 +3,8 @@ import "./App.scss"
 import {BrowserRouter as Router, HashRouter, Switch, Route} from "react-router-dom"
 import page1 from "./pages/page1.jsx"
 import page2 from "./pages/page2.jsx"
+import "antd/dist/antd.css"
+
 export default class App extends Component {
     render() {
         return (
