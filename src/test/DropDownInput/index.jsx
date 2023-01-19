@@ -63,7 +63,7 @@ export default function DropDownInput(props) {
 
             let height = 0;
             for (let i = 0; i < toIndex && i < dropDownItemsRef.current?.length; i++) {
-                height += dropDownItemsRef.current[i].offsetHeight
+                height +=( dropDownItemsRef.current[i]?.offsetHeight || 0)
             }
             dropDownRef.current.scrollTop = height
         }
@@ -85,10 +85,10 @@ export default function DropDownInput(props) {
                 let height = 0; // to include padding
                 const maxItem = listData?.length >= maxVisibleElements ? maxVisibleElements : listData?.length;
                 for (let i = 0; i < maxItem && dropDownItemsRef.current?.length >= maxItem; i++) {
-                    height += dropDownItemsRef.current[i].offsetHeight
+                    height += dropDownItemsRef.current[i]?.offsetHeight || 0
                 }
                 if (listData?.length >= maxVisibleElements) {
-                    height -= dropDownItemsRef.current[maxItem - 1].offsetHeight / 2
+                    height -= (dropDownItemsRef.current[maxItem - 1]?.offsetHeight || 0) / 2
                 }
                 if (height > 2) {
                     setDropDownHeight(height)
@@ -176,8 +176,8 @@ export default function DropDownInput(props) {
                     />
                 </div>
             </div>
-            <div className={`${styles["dropdown-group-wrap"]}  ${showDropDown ? styles["dropdown-group-wrap-visible"] : ""}`} >
-                <div className={`${styles["dropdown-group"]}`} ref={dropDownGroupRef}>
+            <div className={`${styles["dropdown-group-wrap"]}  ${showDropDown ? styles["dropdown-group-wrap-visible"] : ""}`} ref={dropDownGroupRef}>
+                <div className={`${styles["dropdown-group"]}`}>
                     {
                         showSearch ?
                             <div className={styles["search-input-group"]}>

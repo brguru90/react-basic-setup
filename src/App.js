@@ -24,7 +24,9 @@ export default class App extends Component {
         // )
         return <>
         <br /><br /><br /><br /><br />
+        -----------------
         <MobileInput />
+        -----------------
         </>
     }
 }
