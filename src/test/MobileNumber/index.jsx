@@ -6,6 +6,8 @@ export default function MobileInput() {
 
     const [mobileNumber, setMobileNumber] = useState("")
     const [showDropDown, setShowDropDown] = useState(false)
+    const [selectedDropDown, setSelectedDropDown] = useState(null)
+
     return (
         <div style={{ width: "300px", padding: "20px 20px" }}>
 
@@ -20,19 +22,16 @@ export default function MobileInput() {
                     value:mobileNumber,
                 }}
                 searchInputProps={{
-                    placeHolder:"Search Country"
+                    placeholder:"Search Country"
                 }}
 
 
-                listData={[
-                    { key: 1, },
-                    { key: 2, },
-                    { key: 3, },
-                    { key: 4, },
-                ]}
+                listData={[ ...Array(40).keys() ].map( i => i+1).map(i=>({key:i}))}
                 label="Mobile No"
                 showDropDown={showDropDown}
                 onBlur={e=>setShowDropDown(false)}
+                onDropDownChange={e=>setSelectedDropDown(e)}
+                selectedDropDown={selectedDropDown}
 
             />
         </div>
