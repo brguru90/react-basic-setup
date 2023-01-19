@@ -159,6 +159,7 @@ export default function DropDownInput(props) {
                         className={styles["input"]}
                         type="text"
                         {...props.inputProps}
+                        autoComplete="none"
                         onFocus={(e) => {
                             setInputFocused(true)
                             props?.inputProps?.onFocus && props?.inputProps?.onFocus(e)
@@ -181,13 +182,14 @@ export default function DropDownInput(props) {
                     {
                         showSearch ?
                             <div className={styles["search-input-group"]}>
-                                <div className={`${styles["search-input-prefix"]} icon-search search-icon-color`}>
+                                <div className={`${styles["search-input-prefix"]} icon-search`}>
                                 </div>
                                 <div className={styles["search-input-wrapper"]}>
                                     <input
                                         className={styles["search-input"]}
                                         type="text"
                                         {...props?.searchInputProps}
+                                        autoComplete="none"
                                         value={searchForKey}
                                         onChange={e => {
                                             setSearchForKey(e.currentTarget.value)
